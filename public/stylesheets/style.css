@@ -1,0 +1,259 @@
+/*VARIABLES*/
+:root{
+  --ColorAmarillo: #EAC926;
+  --ColorAzul: #03264C;
+  --ColorCeleste: #1259c3;
+  --ColorGris-oscuro: #666666;
+  --ColorGris-claro: #ebebeb;
+  --ColorVerde: #39b54a;
+}
+
+/*GENERALES*/
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+  background-color: var(--ColorGris-claro);
+}
+a{
+  color: black;
+}
+a:hover{
+  color: white;
+  text-decoration: none;
+}
+
+/*HEADER*/
+header{
+    background-color: var(--ColorAmarillo);
+    padding: 10px;
+}
+header .logo{
+    height: 40px;
+    background-image: url('/images/logo-ml.jpeg');
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+header .logo a img{
+    height: 100%;
+}
+header .search-container{
+  padding: 0;
+}
+header .input-search{
+    background-color: white;
+    padding: 5px;
+    border-radius: 2px;
+    width: 100%;
+    height: 40px;
+    position: relative;
+}
+header .input-search input{
+    border:none;
+}
+header .input-search input::placeholder{
+    color: var(--ColorGris-oscuro);
+}
+header .input-search button{
+    border: none;
+    background-color: white;
+    color: var(--ColorGris-oscuro);
+    border-left: 1px solid var(--ColorGris-claro);
+    position: absolute;
+    right: 3px;
+    font-size: 0.8em;
+    height: 60%;
+    width: 12%;
+}
+/* MENSAJE CUOTAS*/
+header .cuotas{
+display: flex;
+justify-content: center;
+margin: 15px 0 5px 0;
+}
+header .cuotas p{
+  margin-left: 3px;
+}
+/*NAVEGACION*/
+header nav{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+header .row{
+  width: 100%;
+  margin: 0px;
+}
+header nav button.burger{
+  background-color: var(--ColorAzul);
+  border: none;
+  border-radius: 4px;
+  padding: 3px 15px;
+}
+/*focus : cuando haces click, te aparece alrededor unas lineas, es el active indicando que ya seleccionamos*/
+header nav button.burger:focus{
+ /* outline: none; --desaparece-- */
+ outline: 1px solid white;
+}
+header nav button.burger i{
+  color: white;
+}
+header nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+/*BANNER*/
+.banner img{
+  width: 100%;
+  display: none;
+}
+
+/*SECCIONES PRODUCTOS*/
+section .titulo{
+  color: var(--ColorGris-oscuro);
+  font-size: 24px;
+  margin: 30px 0;
+}
+section .producto{
+  background-color:white;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+section article{
+  border-top: 1px solid var(--ColorGris-claro);
+  display: flex;
+  position: relative;
+
+}
+section article .contenido{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+section .contenido figure img{
+  width: 100%;
+}
+/*-.....descripcion del articulo....*/
+section .contenido article{
+  padding: 10px;
+}
+section .contenido article span, section .contenido article i{
+  color: var(--ColorVerde);
+}
+section .contenido article span{
+  padding: 7px;
+}
+section .contenido article i{
+  position: absolute;
+  right: 18px;
+  top: -15px;
+  border: 1px solid var(--ColorVerde);
+  width: 27px;
+  height: 27px;
+  padding: 4px;
+  border-radius: 520px;
+}
+
+section .contenido .detalle{
+  margin: 0 10px 10px 10px;
+}
+
+/*FOOTER*/
+
+.footer{
+  padding: 20px;
+  background-color: white;
+}
+.footer article{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer article i{
+  font-size: 35px;
+  color: var(--ColorCeleste);
+  display: flex;
+  margin:  10px 0px;
+}
+.footer article h4, .footer article p{
+  color: var(--ColorGris-oscuro);
+  display: flex;
+  margin: 20px 0px;
+}
+.copyright{
+  text-align: center;
+  padding: 10px 0px;
+  border-top: 1px solid var(--ColorGris-claro);
+  border-bottom: 1px solid var(--ColorGris-claro);
+  color: var(--ColorGris-oscuro);
+}
+/***********************************************/
+/*-------MEDIA QUERIES--------------------------*/
+/************************************************/
+
+@media(min-width: 426px){
+  header .cuotas{
+    margin:0px;
+    text-align: end;
+    padding: 0;
+  }
+  header .cuotas p{
+    margin: 0;
+    line-height: 20px;
+    width: 80%;
+    position: relative;
+    right: -14px;
+  }
+  header .cuotas i{
+    position: relative;
+    left: 40px;
+    top: 4px;
+  }
+  header ul li{
+    justify-content: space-between;
+    padding-right: 12px;
+  }
+  header ul.usuario li:last-child{
+    padding-right: 0;
+  }
+  .banner img{
+    display: block;
+  }
+}
+
+/*Escritorio*/
+@media(min-width:1024px) {
+  header .cuotas{
+    align-items: center;
+  }
+  header .cuotas p{
+    width: 100%;
+    right: 0px;
+
+  }
+  header .cuotas i{
+    left: 18px;
+    top: 0px;
+  }
+  footer article h4 {
+      font-size: 1.3rem;
+  }
+  footer article p {
+      font-size: 0.9rem;
+  }
+  footer .copyright {
+      font-size: 0.7rem;
+  }
+}
